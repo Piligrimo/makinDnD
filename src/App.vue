@@ -8,16 +8,6 @@
 import Buttons from './components/Buttons.vue'
 import DisplayImage from './components/DisplayImage.vue'
 
-function get() {
-  fetch('http://localhost:3000/', {
-     mode: "no-cors",
-    'Content-Type': 'application/json'
-  })
-    .then((response) => {
-      console.log(response.json);
-    })
-}
-
 export default {
   components: { DisplayImage, Buttons },
   name: 'App',
@@ -34,7 +24,6 @@ export default {
     }
   },
   created() {
-    get()
     const vue = this
     setInterval(()=> {
       vue.time =  Number(new Date())
